@@ -1,15 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+This project is forked from udacity's github page on August 2nd,2020. README.md file is also created on the same date.
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+The code is written in python and it uses Pandas and Numpy libraries for computing statistics. The code finds the most popular travel day, station, etc. for New York City, Chicago and Washington.
 
 ### Files used
-Include the files used
+The code is written in the file bikeshare.py and the data used is chicago.csv, washington.csv, new_york_city.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Credits goes to Udacity for designing the program, providing data and project specifications.
