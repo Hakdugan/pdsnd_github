@@ -23,7 +23,7 @@ def get_filters() :
     while True:
         month = input('Which month would you like to analyze? January, February, March, April, May, June or All?: ').lower()
         if month in (months):
-            print('We will be analyze for ',city.capitalize(),' in ' ,month)
+            print('We will be analyze for ',city.lower(),' in ' ,month)
             break
         else:
             print("Please choose from January, February, March, April, May, June or All")
