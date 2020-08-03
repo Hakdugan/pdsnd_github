@@ -10,3 +10,4 @@ The code is written in python and it uses Pandas and Numpy libraries for computi
 The code is written in the file bikeshare.py and the data used in chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
+Credits goes to Udacity for designing the program, providing data and project specifications.
