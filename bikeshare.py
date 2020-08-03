@@ -8,9 +8,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 months = {'all','january','february','march','april','may','june'}
 days = { 'sunday ','monday','tuesday','wednesday','thursday','friday','saturday','all'}
 def get_filters() :
-   
+
     print('Hello! Let\'s explore some US bikeshare data!')
-    
+    print('Are you ready to see the data of cities ?\n')
+
     while True:
         city = input('What city would you like to analyze? Chicago, New York City or Washington?: ').lower()
         if city in (CITY_DATA.keys()):
@@ -18,7 +19,7 @@ def get_filters() :
             break
         else:
             print("Please choose Chicago, New York City or Washington")
-            
+
     while True:
         month = input('Which month would you like to analyze? January, February, March, April, May, June or All?: ').lower()
         if month in (months):
@@ -26,7 +27,7 @@ def get_filters() :
             break
         else:
             print("Please choose from January, February, March, April, May, June or All")
- 
+
     while True:
         day = input('What day of the week would you like to analyze? Sunday, Monday, etc: ').lower()
         if day in (days):
@@ -35,10 +36,10 @@ def get_filters() :
         else:
             print("Please choose Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday  ")
 
-        
+
     print('-'*40)
     return city,month,day
-  
+
 
 def load_data(city, month, day):
     df = pd.read_csv(CITY_DATA[city])
@@ -52,8 +53,8 @@ def load_data(city, month, day):
     if day != 'all' :
         days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
         df = df[df['day_of_week'] == days.index(day.title())]
-   
-    
+
+
     return df
 
 
@@ -110,7 +111,7 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     print("Total travel time:" , start_time/86400, " days")
-    
+
     # TO DO: display mean travel time
     avg_travel_time= df['Trip Duration'].mean()
     print('Mean travel time: ',avg_travel_time/60, " minutes")
@@ -160,7 +161,7 @@ def user_stats(df):
 
     except KeyError:
 
-           print("\nMost recent birth year:\nThere is no data for this month.\n")  
+           print("\nMost recent birth year:\nThere is no data for this month.\n")
     try:
 
         most_common_year = df['Birth Year'].value_counts().idxmax()
@@ -169,8 +170,8 @@ def user_stats(df):
 
     except KeyError:
 
-          print("\Most common year:\nThere is no data for this month.")        
-   
+          print("\Most common year:\nThere is no data for this month.")
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 def raw_data(df):
@@ -201,8 +202,8 @@ def raw_data(df):
 
               raw = input('\nWould you like to see next rows of raw data?\n').lower()
 
-              i += 5            
-    print('-'*40)        
+              i += 5
+    print('-'*40)
 def main():
     while True:
         city, month, day = get_filters()
@@ -213,7 +214,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         raw_data(df)
-         
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
            break
